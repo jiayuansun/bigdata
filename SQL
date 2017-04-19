@@ -1,0 +1,24 @@
+Pivot
+select * from (
+   select times_purchased, state_code
+   from customers t
+)
+pivot 
+(
+   count(state_code)
+   for state_code in ('NY','CT','NJ','FL','MO')
+)
+order by times_purchased
+/
+
+Unpivot
+
+select *
+  from cust_matrix
+unpivot
+(
+  state_counts
+    for state_code in ("New York","Conn","New Jersey","Florida","Missouri")
+)
+order by "Puchase Frequency", state_code
+/
