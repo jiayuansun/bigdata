@@ -1,0 +1,89 @@
+#parse delimiter string
+select regexp_substr('SMITH,ALLEN,WARD,JONES','[^,]+', 1, level) from dual
+ connect by regexp_substr('SMITH,ALLEN,WARD,JONES', '[^,]+', 1, level) is not null;
+ 
+#compare column difference
+http://www.orafaq.com/files/column_diffs.txt
+
+#Oracle Advance Queue
+sys.aq$_agent (1, 2, 3)
+
+#Oracle determistic vs result cache
+
+Determistic:Subsequent queries (or fetches) have no access to the cached values of previous runs.
+
+Result Cache:
+
+#Oracle Shared pool purge
+
+exec DBMS_SHARED_POOL.PURGE ('00000000A61B6048, 3495214670', 'C');
+
+#Create MV on commit 
+
+Create MV log
+Create commit
+
+#Turn off merge operation
+
+alter session set "_optimizer_mjc_enabled"=true ;
+alter session set "_optimizer_cartesian_enabled "=false ;
+
+#identify if the table name has number
+where length(table_name)=length(TRANSLATE(table_name,'0123456789',' '))
+
+#dba_ts_quotas 
+
+#hash hash partition
+
+#parameter that controls the parallism
+
+ cpu_count
+ parallel_max_servers ;
+ PARALLEL_THREADS_PER_CPU;
+ concurrent_parallel_users;
+ PARALLEL_AUTOMATIC_TUNING
+
+#mv refresh time all_mv
+
+#restore dropped table
+
+#Oracle column low level high level 
+
+select utl_raw.cast_to_number(high_value),utl_raw.cast_to_number(low_value)
+from all_tab_columns
+
+#exchange partition
+
+#lengthb , dbms_lob.substr
+
+#DDL trigger using  dynamic sql , after the create on schema 
+dbms_job.submit(job,dynamic sql statement)
+
+#dbms_job can execute parallel
+
+#using the db pickup a random number
+1.
+select * from table sample(20);
+2.
+select * from (select * from table order by dbms_random.random)
+where rownum<21;
+
+#Oracle no_query_transformation no_push_pred hint
+
+#Oracle table compression , compress for DML
+
+#Oracle parallel_enable (parittion by something by hash (something))
+
+#explain plan for xxx
+select * from table(dbms_xplan.display);
+
+#dbms_profiler
+
+#oracle collection limit
+
+#partition prefix vs nonprefix
+
+#what's bloom filter
+
+#number to interval
+
