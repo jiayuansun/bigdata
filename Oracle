@@ -87,3 +87,25 @@ select * from table(dbms_xplan.display);
 
 #number to interval
 
+#Oracle views
+v$session
+v$open_cursor
+v$sgastat
+v$session_longops
+v$locked_objects
+v$sql
+v$sqlarea
+v$sql_plan
+v$result_cache_objects
+gv$instances
+
+dba_mview_analysis
+dba_hist_sqlstat
+dba_hist_snapshot
+dba_hist_sqlbind
+dba_hist_sql_plan
+dba_hist_active_sess_history
+
+optimiazer_user_feedback
+
+v$access
